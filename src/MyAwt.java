@@ -16,7 +16,7 @@ public class MyAwt {
 	String txtFilePath;
 	boolean isOpen = false;
 	
-	Frame f = new Frame("文本分析工具1.0");
+	Frame f = new Frame("文本分析工具1.0"); //版本名
 	
 	Panel pFunc1 = new Panel();	//	pFunc1.add(new Label("111"));
 	Panel pFunc2 = new Panel();	//	pFunc2.add(new Label("222"));
