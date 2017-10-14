@@ -66,6 +66,7 @@ public class MyGraph {
 		return bridgeList;
 	}
 	
+	// this is a git test on branch b2
 	public int[] getOutDegree(int v)
 	{
 	//	for(int i = 0; i<vertexNum; i++)		//重新初始化visited
