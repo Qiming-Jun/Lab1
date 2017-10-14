@@ -28,7 +28,7 @@ public class Hello1 {
 					tmpStr.append(' ');
 			}
 			
-		//	strList = (new String(tmpStr)).split("     |    |   |  | ");
+		
 			return (new String(tmpStr)).split("     |    |   |  | ");
 		}
 		

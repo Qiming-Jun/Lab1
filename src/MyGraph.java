@@ -9,6 +9,7 @@ public class MyGraph {
 			this.Visited = false;
 		}
 	}
+	// this is git test line
 	
 //	private int[][] edges;		
 	private	Edges[][] edges;		//图结构的邻接矩阵
