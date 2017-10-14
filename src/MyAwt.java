@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.FilenameFilter;
+//import java.io.FilenameFilter;
 import java.io.IOException;
 import java.awt.FileDialog;
 //import  org.eclipse.swt.widgets.FileDialog;

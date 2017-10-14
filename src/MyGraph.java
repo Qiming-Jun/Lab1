@@ -3,7 +3,7 @@ public class MyGraph {
 	
 	class Edges{
 		public int Cost;
-		public boolean Visited; 
+		public boolean Visited; 	//used in Folyd
 		public Edges(){
 			this.Cost = 0;
 			this.Visited = false;

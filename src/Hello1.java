@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Hello1 {
 		private static String txtStr;
