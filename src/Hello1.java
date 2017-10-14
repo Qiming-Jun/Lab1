@@ -32,6 +32,7 @@ public class Hello1 {
 			return (new String(tmpStr)).split("     |    |   |  | ");
 		}
 		
+		// this is a git test on branch b2
 		private static boolean GetFile(String fileName) throws IOException
 		{
 			File rf0 = new File(fileName);		//判断文件是否存在
