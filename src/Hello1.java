@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Random;
 //import java.util.Scanner;
 
+// this is a git test on branch wanqiming (1)
 public class Hello1 {
 		private static String txtStr;
 		private static String[] strList; 
