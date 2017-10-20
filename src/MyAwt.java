@@ -53,7 +53,7 @@ public class MyAwt {
 	{
 		setWest();
 		setEast();
-		
+		setNorth();
 		setPanelFunc1();
 		setPanelFunc2();
 		setPanelFunc3();
@@ -70,7 +70,19 @@ public class MyAwt {
 //		TextArea tf = new TextArea("", 10, 50, TextArea.SCROLLBARS_VERTICAL_ONLY);
 //		tf.setSize(100, 100);
 		
-
+	private void setNorth()
+	{
+	//	pNorth.add(new Label("当前文本文档路径："));
+	//	Label pathLabel = new Label("");
+	//	pathLabel.setText("nihao");
+	//	openfile.addActionListener(ee -> {  
+     //      pathLabel.setText(txtFilePath);
+     //       System.out.println("54u56u6");
+     //   }); 
+		
+	//	pNorth.add(pathLabel);
+		
+	}
 	
 	private void setWest()
 	{	
@@ -110,7 +122,7 @@ public class MyAwt {
 		f.add(pEast, BorderLayout.EAST);
 		
 		pWest.setSize(500, 200);
-		pEast.setSize(500,400);
+		pEast.setSize(500, 400);
 		
 		f.setSize(500, 500);
 		f.setResizable(false);
@@ -130,22 +142,22 @@ public class MyAwt {
 		
 		gbc.gridheight = 1;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc1.getLayout()).setConstraints(openfile,gbc);
+		((GridBagLayout)pFunc1.getLayout()).setConstraints(openfile, gbc);
 		pFunc1.add(openfile);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc1.getLayout()).setConstraints(tField,gbc);
+		((GridBagLayout)pFunc1.getLayout()).setConstraints(tField, gbc);
 		pFunc1.add(tField);
 		
-		gbc.insets = new Insets(5,0,0,30);
-		((GridBagLayout)pFunc1.getLayout()).setConstraints(tArea,gbc);
+		gbc.insets = new Insets(5, 0 , 0 , 30);
+		((GridBagLayout)pFunc1.getLayout()).setConstraints(tArea, gbc);
 		pFunc1.add(tArea);
 		
 		FileDialog d1 = new FileDialog(f, "Open File", FileDialog.LOAD); 
 		
 		tField.setEditable(false);
 		tArea.setEditable(false);
-		tArea.setFont(new Font("Times New Roman",0,13));
+		tArea.setFont(new Font("Times New Roman", 0 , 13));
 		
 		openfile.addActionListener(e -> {  
             d1.setVisible(true);
@@ -201,7 +213,7 @@ public class MyAwt {
 			}
 		});
 		
-		open.addActionListener(e->{
+		open.addActionListener(e -> {
 			String picPath = d1.getDirectory() + d1.getFile();
 			Runtime rt = Runtime.getRuntime();
 			try {
@@ -229,7 +241,7 @@ public class MyAwt {
 		Checkbox cb2 = new Checkbox("否", cbg, false);
 		
 		tArea.setEditable(false);
-		tArea.setFont(new Font("Times New Roman",0,13));
+		tArea.setFont(new Font("Times New Roman", 0 , 13));
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 		pFunc3.setLayout(new GridBagLayout());
@@ -237,37 +249,37 @@ public class MyAwt {
 		
 		gbc.gridheight = 1;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(lb1,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(lb1, gbc);
 		pFunc3.add(lb1);
 		
 		gbc.gridwidth = 2; 
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(word1,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(word1, gbc);
 		pFunc3.add(word1);
 		
 		gbc.gridwidth = 3;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(lb2,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(lb2, gbc);
 		pFunc3.add(lb2);
 		
 		gbc.gridwidth = 4;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(word2,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(word2, gbc);
 		pFunc3.add(word2);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(OK,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(OK, gbc);
 		pFunc3.add(OK);
 		
 		gbc.gridheight = 3;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(lb3,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(lb3, gbc);
 		pFunc3.add(lb3);
 		
 	//	gbc.gridheight = 3;
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(cb1,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(cb1, gbc);
 		pFunc3.add(cb1);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(cb2,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(cb2, gbc);
 		pFunc3.add(cb2);
 		
 		
@@ -277,11 +289,11 @@ public class MyAwt {
 		
 	//	gbc.gridheight = 5;
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc3.getLayout()).setConstraints(tArea,gbc);
+		((GridBagLayout)pFunc3.getLayout()).setConstraints(tArea, gbc);
 		pFunc3.add(tArea);
 		
 	//	String strToArea = "";
-		OK.addActionListener(e ->{
+		OK.addActionListener(e -> {
 			String str1 = word1.getText();
 			String str2 = word2.getText();
 			if(!str1.isEmpty() || !str2.isEmpty() || isOpen==true){
@@ -308,9 +320,9 @@ public class MyAwt {
 		Checkbox cb2 = new Checkbox("否", cbg, false);
 		
 		txt1.setEditable(true);
-		txt1.setFont(new Font("Times New Roman",0,13));
+		txt1.setFont(new Font("Times New Roman", 0, 13));
 		txt2.setEditable(false);
-		txt2.setFont(new Font("Times New Roman",0,13));
+		txt2.setFont(new Font("Times New Roman", 0, 13));
 		
 		GridBagConstraints gbc = new GridBagConstraints();
 		pFunc4.setLayout(new GridBagLayout());
@@ -318,42 +330,42 @@ public class MyAwt {
 		
 		gbc.gridheight = 1;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(lb1,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(lb1, gbc);
 		pFunc4.add(lb1);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(OK,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(OK, gbc);
 		pFunc4.add(OK);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(txt1,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(txt1, gbc);
 		pFunc4.add(txt1);
 		
 		gbc.gridheight = 3;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(lb2,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(lb2, gbc);
 		pFunc4.add(lb2);
 		
 //		gbc.gridheight = 3;
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(lb3,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(lb3, gbc);
 		pFunc4.add(lb3);
 		
 	//	gbc.gridheight = 3;
 		gbc.gridwidth = 3;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(cb1,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(cb1, gbc);
 		pFunc4.add(cb1);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(cb2,gbc);
-		pFunc4.add(cb2);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(cb2, gbc);
+		pFunc4.add(cb2); 
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc4.getLayout()).setConstraints(txt2,gbc);
+		((GridBagLayout)pFunc4.getLayout()).setConstraints(txt2, gbc);
 		pFunc4.add(txt2);
 		
 	//	String strToArea = "";
-		OK.addActionListener(e ->{
+		OK.addActionListener(e -> {
 			String str1 = txt1.getText();
 			String str2 = Main.generateNewText(str1) + "\r\n";//Main.queryBridgeWords(str1, str2);
 			
@@ -379,7 +391,7 @@ public class MyAwt {
 		Checkbox cb1 = new Checkbox("是", cbg1, true);
 		Checkbox cb2 = new Checkbox("否", cbg1, false);
 		tArea1.setEditable(false);
-		tArea1.setFont(new Font("Times New Roman",0,13));
+		tArea1.setFont(new Font("Times New Roman", 0, 13));
 		
 		
 		//多源最短路径原件声明
@@ -393,7 +405,7 @@ public class MyAwt {
 		Checkbox cb3 = new Checkbox("是", cbg2, true);
 		Checkbox cb4 = new Checkbox("否", cbg2, false);
 		tArea2.setEditable(false);
-		tArea2.setFont(new Font("Times New Roman",0,13));
+		tArea2.setFont(new Font("Times New Roman", 0, 13));
 	//	布局声明
 	//单源最短路径布局	
 	//	
@@ -403,84 +415,84 @@ public class MyAwt {
 		
 		gbc.gridheight = 1;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb1,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb1, gbc);
 		pFunc5.add(lb1);
 		
 		gbc.gridwidth = 2; 
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(word1,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(word1, gbc);
 		pFunc5.add(word1);
 		
 		gbc.gridwidth = 3;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb2,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb2, gbc);
 		pFunc5.add(lb2);
 		
 		gbc.gridwidth = 4;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(word2,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(word2, gbc);
 		pFunc5.add(word2);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(OK1,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(OK1, gbc);
 		pFunc5.add(OK1);
 		
 		gbc.gridheight = 2;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb3,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb3, gbc);
 		pFunc5.add(lb3);
 		
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb4,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb4, gbc);
 		pFunc5.add(lb4);
 		
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb1,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb1, gbc);
 		pFunc5.add(cb1);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb2,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb2, gbc);
 		pFunc5.add(cb2);
 	
 		gbc.gridheight = 2;
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(tArea1,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(tArea1, gbc);
 		pFunc5.add(tArea1);
 		
 	//	多源最短路径布局
 		gbc.gridheight = 3;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb5,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb5, gbc);
 		pFunc5.add(lb5);
 		
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(word3,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(word3, gbc);
 		pFunc5.add(word3);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(OK2,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(OK2, gbc);
 		pFunc5.add(OK2);
 		
 		gbc.gridheight = 3;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb6,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb6, gbc);
 		pFunc5.add(lb6);
 		
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb7,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(lb7, gbc);
 		pFunc5.add(lb7);
 		
 		gbc.gridwidth = 3;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb3,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb3, gbc);
 		pFunc5.add(cb3);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb4,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(cb4, gbc);
 		pFunc5.add(cb4);
 		
 		gbc.gridheight = 4;
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc5.getLayout()).setConstraints(tArea2,gbc);
+		((GridBagLayout)pFunc5.getLayout()).setConstraints(tArea2, gbc);
 		pFunc5.add(tArea2);
 		
-		OK1.addActionListener(e ->{
+		OK1.addActionListener(e -> {
 			if(isOpen){
 				String str1 = word1.getText();
 				String str2 = word2.getText();
@@ -493,7 +505,7 @@ public class MyAwt {
 			}
 		});
 		
-		OK2.addActionListener(e ->{
+		OK2.addActionListener(e -> {
 			if(isOpen){
 				String str1 = word3.getText();
 			//	String str2 = word2.getText();
@@ -523,7 +535,7 @@ public class MyAwt {
 		Checkbox cb2 = new Checkbox("否", cbg, false);
 		
 		txt.setEditable(false);
-		txt.setFont(new Font("Times New Roman",0,13));
+		txt.setFont(new Font("Times New Roman", 0, 13));
 	//	txt2.setEditable(false);
 	//	txt2.setFont(new Font("Times New Roman",0,13));
 		
@@ -533,43 +545,43 @@ public class MyAwt {
 		
 		gbc.gridheight = 1;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb1,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb1, gbc);
 		pFunc6.add(lb1);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(OK,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(OK, gbc);
 		pFunc6.add(OK);
 		
 		gbc.gridheight = 2;
 		gbc.gridwidth = 1;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb2,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb2, gbc);
 		pFunc6.add(lb2);
 		
 		gbc.gridwidth = 2;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb3,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb3, gbc);
 		pFunc6.add(lb3);
 		
 		gbc.gridwidth = 3;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb3,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(lb3, gbc);
 		pFunc6.add(lb3);
 		
 		gbc.gridwidth = 4;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(cb1,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(cb1, gbc);
 		pFunc6.add(cb1);
 		
 		gbc.gridwidth = 5;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(cb2,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(cb2, gbc);
 		pFunc6.add(cb2);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(save,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(save, gbc);
 		pFunc6.add(save);
 		
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
-		((GridBagLayout)pFunc6.getLayout()).setConstraints(txt,gbc);
+		((GridBagLayout)pFunc6.getLayout()).setConstraints(txt, gbc);
 		pFunc6.add(txt);
 		
-		OK.addActionListener(e ->{
+		OK.addActionListener(e -> {
 			if(isOpen){
 				String str = Main.randomWalk() + "\r\n";
 				
@@ -580,7 +592,7 @@ public class MyAwt {
 			}
 		});
 		
-		save.addActionListener(e ->{
+		save.addActionListener(e -> {
 			if(isOpen){				
 				String str = txt.getText();
 				

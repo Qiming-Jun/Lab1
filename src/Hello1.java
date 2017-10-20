@@ -77,7 +77,7 @@ public class Hello1 {
 			}
 			
 			g = new MyGraph(wordNum);
-			for(int i=0; i<strList.length-1; i++)
+			for(int i=0; i<strList.length - 1; i++)
 			{
 				int v0 = (int)(map.get(strList[i]));
 				int v1 = (int)(map.get(strList[i+1]));
@@ -161,8 +161,8 @@ public class Hello1 {
 				return strReturn;
 			}
 			
-			strReturn = strReturn + "The bridge words from \"" + word1 + "\" to \"" +
-						word2 + "\" is: ";
+			strReturn = strReturn + "The bridge words from \"" + word1 + "\" to \"" 
+			+word2 + "\" is: ";
 			for(int i = 0; i<bridgeList.length; i++)
 				strReturn = strReturn + wordList[bridgeList[i]] + " ";
 			strReturn = strReturn + "\r\n";
