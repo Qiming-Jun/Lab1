@@ -18,95 +18,152 @@ public class MyGraph {
 	private int[][] P;				//Folyd算法的最短路径前置矩阵
 	private boolean FloydFlag;		//判断是否经过floyd算法处理过
 	
-	public MyGraph(int vertices)
+	public MyGraph(final int vertices)
 	{
 		vertexNum = vertices;
 		
 	//	edges = new int[vertices][vertices];
 		edges = new Edges[vertices][vertices];
-		for(int i=0; i<vertices; i++)
-			for(int j=0; j<vertices; j++)
+		for(int i=0; i<vertices; i++) {
 			{
-				edges[i][j] = new Edges();
-			//	edges[i][j].Cost = 0;
-			//	edges[i][j] = 0;
+				{
+					{
+						{
+							for(int j=0; j<vertices; j++)
+							{
+								edges[i][j] = new Edges();
+							//	edges[i][j].Cost = 0;
+							//	edges[i][j] = 0;
+							}
+						}
+					}
+				}
 			}
+		}
 		FloydFlag = false;
 		
 	}
 	
-	public void setEdge(int i, int j, int cost)
+	public final void setEdge(final int i, final int j, final int cost)
 	{
 	//	edges[i][j] = cost;
 		edges[i][j].Cost = cost;
 	}
 	
-	public int getEdge(int i, int j)
+	public final int getEdge(final int i, final int j)
 	{
 	//	return edges[i][j];
 		return edges[i][j].Cost;
 	}
 	
-	public int[] getBridge(int head, int tail)
+	public final int[] getBridge(final int head, final int tail)
 	{
 		int[] bridgeList;
 		int num = 0, j = 0;
-		for(int i=0; i<edges.length; i++)
-			if(head!=i && tail!=i && edges[head][i].Cost!=0 && edges[i][tail].Cost!=0)
-		//	if(head!=i && tail!=i && edges[head][i]!=0 && edges[i][tail]!=0)
-				num++;
+		for(int i=0; i<edges.length; i++) {
+			{
+				{
+					{
+						{
+							if(head!=i && tail!=i && edges[head][i].Cost!=0 && edges[i][tail].Cost!=0)
+						//	if(head!=i && tail!=i && edges[head][i]!=0 && edges[i][tail]!=0)
+								num++;
+						}
+					}
+				}
+			}
+		}
 		
 		bridgeList = new int[num];
 		
-		for(int i=0; i<edges.length; i++)
-		//	if(head!=i && tail!=i && edges[head][i]!=0 && edges[i][tail]!=0)
-			if(head!=i && tail!=i && edges[head][i].Cost!=0 && edges[i][tail].Cost!=0)
-				bridgeList[j++] = i;
+		for(int i=0; i<edges.length; i++) {
+			{
+				{
+					{
+						{
+							//	if(head!=i && tail!=i && edges[head][i]!=0 && edges[i][tail]!=0)
+							if(head!=i && tail!=i && edges[head][i].Cost!=0 && edges[i][tail].Cost!=0)
+								bridgeList[j++] = i;
+						}
+					}
+				}
+			}
+		}
 		
 		return bridgeList;
 	}
 	
-	public int[] getOutDegree(int v)
+	public final int[] getOutDegree(final int v)
 	{
 	//	for(int i = 0; i<vertexNum; i++)		//重新初始化visited
 	//		for(int j = 0; j<vertexNum; j++)
 	//			edges[i][j].Visited = false;
 		
-		if(v >= vertexNum)	return null;
+		if(v >= vertexNum) {
+			return null;
+		}
 		
 		int count1 = 0;
-		for(int i = 0; i<vertexNum; i++)
-			if(edges[v][i].Cost != 0)
-		//	if(edges[v][i] != 0)
-				count1++;				//此处count用来计算出度
+		for(int i = 0; i<vertexNum; i++) {
+			{
+				{
+					{
+						{
+							if(edges[v][i].Cost != 0)
+						//	if(edges[v][i] != 0)
+								count1++;				//此处count用来计算出度
+						}
+					}
+				}
+			}
+		}
 		int[] outDegreeList = new int[count1];
 		
 		int count2 = 0;					//此处count用来给outDegreeList添加元素
-		for(int i = 0; i<vertexNum; i++)
-			if(edges[v][i].Cost != 0)			//0  or integer.max
-				outDegreeList[count2++] = i;//edges[v][i].Cost;
+		for(int i = 0; i<vertexNum; i++) {
+			{
+				{
+					{
+						{
+							if(edges[v][i].Cost != 0)			//0  or integer.max
+								outDegreeList[count2++] = i;//edges[v][i].Cost;
+						}
+					}
+				}
+			}
+		}
 		
 		return outDegreeList;
 	}
 	
-	public boolean IsVisited(int head, int tail)
+	public final boolean IsVisited(final int head, final int tail)
 	{
-		if(head>=vertexNum || tail>=vertexNum)
+		if(head>=vertexNum || tail>=vertexNum) {
 			return false;
+		}
 		
 		return edges[head][tail].Visited;
 	}
 	
-	public void setVisited(int head, int tail, boolean flag)
+	public final void setVisited(final int head, final int tail, final boolean flag)
 	{
 		edges[head][tail].Visited = flag;
 	}
 	
-	public void removeVisited()
+	public final void removeVisited()
 	{
-		for(int i = 0; i<vertexNum; i++)
-			for(int j = 0; j<vertexNum; j++)
-				edges[i][j].Visited = false;
+		for(int i = 0; i<vertexNum; i++) {
+			{
+				{
+					{
+						{
+							for(int j = 0; j<vertexNum; j++)
+								edges[i][j].Visited = false;
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	private void Floyd()
@@ -144,16 +201,19 @@ public class MyGraph {
 	     FloydFlag = true;
 	}
 	
-	public int[] getDisPath(int source, int target)
+	public final int[] getDisPath(final int source, final int target)
 	{
-		if(!FloydFlag)
+		if(!FloydFlag) {
 			Floyd();
+		}
 		
-		if(source >= vertexNum || target >= vertexNum || P[source][target] == -1)
+		if(source >= vertexNum || target >= vertexNum || P[source][target] == -1) {
 			return null;
+		}
 		
-		if(D[source][target] == Integer.MAX_VALUE)		//无路径
+		if(D[source][target] == Integer.MAX_VALUE) {
 			return null;
+		}
 		
 		int k = P[source][target];
 		
@@ -162,7 +222,7 @@ public class MyGraph {
 			k = P[k][target];
 			count++;
 		}
-		int path[] = new int[count+2];	//此段是计数
+		int[] path = new int[count+2];	//此段是计数
 		
 		k = P[source][target];  count = 0;
 		path[count++] = source;
@@ -176,10 +236,11 @@ public class MyGraph {
 		return path;
 	}
 	
-	public int getDistance(int source, int target)
+	public final int getDistance(final int source, final int target)
 	{
-		if(!FloydFlag)
+		if(!FloydFlag) {
 			Floyd();
+		}
 		
 		return D[source][target];
 	}

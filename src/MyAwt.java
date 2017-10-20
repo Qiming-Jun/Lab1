@@ -44,7 +44,7 @@ public class MyAwt {
 	
 	ButtonListener listener = new ButtonListener();
 	
-	public static void main(String arg[]) throws IOException
+	public static void main(final String arg[]) throws IOException
 	{
 		new MyAwt();
 	}
@@ -626,14 +626,14 @@ public class MyAwt {
 		b6.addActionListener(listener);
 		
 		f.addWindowListener(new WindowAdapter(){
-			public void windowClosing(WindowEvent close){
+			public void windowClosing(final WindowEvent close){
 				System.exit(0);
 			};
 		});
 	}
 	
 	class ButtonListener implements ActionListener{
-		public void actionPerformed(ActionEvent e){
+		public void actionPerformed(final ActionEvent e){
 			if(e.getSource() == b1)
 			{
 				card.show(pEast, "1");
