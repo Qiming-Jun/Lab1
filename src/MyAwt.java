@@ -53,7 +53,7 @@ public class MyAwt {
 	{
 		setWest();
 		setEast();
-		setNorth();
+		
 		setPanelFunc1();
 		setPanelFunc2();
 		setPanelFunc3();
@@ -70,19 +70,7 @@ public class MyAwt {
 //		TextArea tf = new TextArea("", 10, 50, TextArea.SCROLLBARS_VERTICAL_ONLY);
 //		tf.setSize(100, 100);
 		
-	private void setNorth()
-	{
-	//	pNorth.add(new Label("当前文本文档路径："));
-	//	Label pathLabel = new Label("");
-	//	pathLabel.setText("nihao");
-	//	openfile.addActionListener(ee -> {  
-     //      pathLabel.setText(txtFilePath);
-     //       System.out.println("54u56u6");
-     //   }); 
-		
-	//	pNorth.add(pathLabel);
-		
-	}
+
 	
 	private void setWest()
 	{	
@@ -708,120 +696,5 @@ public class MyAwt {
 			}
 		}
 	}
-		
-		
-		
-		
-		
-	//	ScrollPane sp = new ScrollPane();
-	//	sp.add(tf);
-	//	f.add(tf);
-	//	f.setSize(500,500);
-	//	f.setVisible(true);
-		
-				
-/*	//	ButtonListener listener;// = new ButtonListener();
-		Hello1 Main = new Hello1();
-		
-		JFrame f = new JFrame("Open File");
-		
-		JButton B1 = new JButton("打开文件");
-		FileDialog fd = new FileDialog(f, "OpenFile", FileDialog.LOAD);
-		
-		JTextArea ta = new JTextArea(10, 30);  ta.setLineWrap(true);
-	//	ta.setBorder(BorderFactory.createLineBorder(Color.black));
-		JScrollPane taRoll = new JScrollPane(ta); 
-		taRoll.setVerticalScrollBarPolicy( 
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS); 
-		ta.setCaretPosition(ta.getText().length());
-		taRoll.setVisible(true);
-		
-		TextField tf1 = new TextField(15);
-		TextField tf2 = new TextField(15);
-
-		Button B2 = new Button("确定");
-		
-		Button B3 = new Button("显示有向图");
-		
-		class ButtonListener implements ActionListener{
-			
-			public void actionPerformed(ActionEvent e){
-				if(e.getSource() == B1)
-				{//	System.out.println("anzhang!");
-				//	ta.setText("anzhang!");
-				//	ta.append("jiayi");
-					
-					fd.setVisible(true);
-					String filePath = fd.getDirectory() + fd.getFile();
-					try {
-						Main.GetFile(filePath);
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					
-					Main.strList = Main.strSplit(Main.txtStr);
-					Main.setGraph();
-					
-				}
-				
-				if(e.getSource() == B2){
-					String word1 = tf1.getText();
-					String word2 = tf2.getText();
-					
-				//	String taTxt = "";
-					ta.append(Main.queryBridgeWords(word1, word2));
-					System.out.println(Main.queryBridgeWords(word1, word2));
-					
-				}
-				
-				if(e.getSource() == B3){
-					try {
-						Main.showDirectedGraph();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-				
-			//	if(e.getSource() == tf1)
-			//	{
-			//		String s1 = tf1.getText();
-			//		System.out.println(s1);
-			//	}
-			}
-		}
-		
-		ButtonListener listener = new ButtonListener();
-		B1.addActionListener(listener);
-		B2.addActionListener(listener);
-		B3.addActionListener(listener);
-			// func 1
-		
-		f.addWindowListener(new WindowAdapter(){
-			public void windowClosing(WindowEvent e){
-				System.exit(0);
-			}
-		});
-		
-
-		
-		f.setSize(600, 500);
-		f.setLayout(new FlowLayout());
-		
-		f.add(B1);
-		f.add(tf1);
-		f.add(tf2);
-		f.add(B2);
-		f.add(ta);
-		f.add(B3);
-//		f.add(taRoll);
-//		taRoll.setViewportView(ta);
-		
-		fd.setVisible(false);
-		f.setVisible(true);
-		
-
-*/	
 	
 }
