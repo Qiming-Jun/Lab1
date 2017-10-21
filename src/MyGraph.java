@@ -3,10 +3,10 @@ public class MyGraph {
 	
 	class Edges{
 		public int Cost;
-		public boolean Visited; 
-		public Edges(){
+		public boolean visited; 
+		public Edges(){				//³õÊ¼»¯Í¼
 			this.Cost = 0;
-			this.Visited = false;
+			this.visited = false;
 		}
 	}
 	
@@ -59,7 +59,8 @@ public class MyGraph {
 	public final int[] getBridge(final int head, final int tail)
 	{
 		int[] bridgeList;
-		int num = 0, j = 0;
+		int num = 0;
+		int j = 0;
 		for(int i=0; i<edges.length; i++) {
 			{
 				{
@@ -142,12 +143,12 @@ public class MyGraph {
 			return false;
 		}
 		
-		return edges[head][tail].Visited;
+		return edges[head][tail].visited;
 	}
 	
 	public final void setVisited(final int head, final int tail, final boolean flag)
 	{
-		edges[head][tail].Visited = flag;
+		edges[head][tail].visited = flag;
 	}
 	
 	public final void removeVisited()
@@ -158,7 +159,7 @@ public class MyGraph {
 					{
 						{
 							for(int j = 0; j<vertexNum; j++)
-								edges[i][j].Visited = false;
+								edges[i][j].visited = false;
 						}
 					}
 				}
