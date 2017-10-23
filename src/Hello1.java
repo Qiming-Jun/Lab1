@@ -13,30 +13,32 @@ public class Hello1 {
 		private static MyGraph g;
 		private static Map map;
 		
-		private static String[] strSplit(String txtStr_this)
+		private static String[] strSplit(final String txtStr_this)
 		{
 			StringBuffer tmpStr = new StringBuffer();
 			
 			for(int i=0; i<txtStr_this.length(); i++)
 			{
 				char c = txtStr_this.charAt(i);
-				if(c>='A' && c<='Z')
+				if(c>='A' && c<='Z') {
 					tmpStr.append((char)(c+32));	//大写字母转小写
-				else if(c>='a' && c<='z')
+				} else if(c>='a' && c<='z') {
 					tmpStr.append(c);
-				else
+				} else {
 					tmpStr.append(' ');
+				}
 			}
 			
 		//	strList = (new String(tmpStr)).split("     |    |   |  | ");
 			return (new String(tmpStr)).split("     |    |   |  | ");
 		}
 		
-		private static boolean GetFile(String fileName) throws IOException
+		private static boolean GetFile(final String fileName) throws IOException
 		{
 			File rf0 = new File(fileName);		//判断文件是否存在
-			if(!rf0.exists())
+			if(!rf0.exists()) {
 				return false;
+			}
 			
 			FileInputStream rf = new FileInputStream(fileName);
 			
@@ -77,7 +79,7 @@ public class Hello1 {
 			}
 			
 			g = new MyGraph(wordNum);
-			for(int i=0; i<strList.length-1; i++)
+			for(int i=0; i<strList.length - 1; i++)
 			{
 				int v0 = (int)(map.get(strList[i]));
 				int v1 = (int)(map.get(strList[i+1]));
@@ -101,12 +103,15 @@ public class Hello1 {
 				
 		}
 */
-		public static String generateNewText(String inputText)
+		public static String generateNewText(final String inputText)
 		{
 			String[] inputTxtList = Hello1.strSplit(inputText);
 			StringBuffer newString = new StringBuffer();
 			
-			if(inputTxtList.length == 1) return inputTxtList[0];	//只有一个单词的情况
+			if(inputTxtList.length == 1)
+			 {
+				return inputTxtList[0];	//只有一个单词的情况
+			}
 			
 			int i;
 			for(i = 0; i<inputTxtList.length - 1; i++){
@@ -127,7 +132,7 @@ public class Hello1 {
 			return (new String(newString));
 		}
 		
-		public static String queryBridgeWords(String word1, String word2)
+		public static String queryBridgeWords(final String word1, final String word2)
 		{
 			String strReturn = "";
 		//	int v0, v1;
@@ -161,29 +166,32 @@ public class Hello1 {
 				return strReturn;
 			}
 			
-			strReturn = strReturn + "The bridge words from \"" + word1 + "\" to \"" +
-						word2 + "\" is: ";
-			for(int i = 0; i<bridgeList.length; i++)
+			strReturn = strReturn + "The bridge words from \"" + word1 + "\" to \"" 
+			+word2 + "\" is: ";
+			for(int i = 0; i<bridgeList.length; i++) {
 				strReturn = strReturn + wordList[bridgeList[i]] + " ";
+			}
 			strReturn = strReturn + "\r\n";
 			
 			return strReturn;
 		}
 		
-		public static void showDirectedGraph(String pathDir) throws IOException
+		public static void showDirectedGraph(final String pathDir) throws IOException
 		{
 			 File DotFile = new File(pathDir + "Graph.dot");
 			 FileWriter NewFile = new FileWriter(DotFile);
              NewFile.write("digraph abc{\r\n\tnode [shape=\"record\"];\r\n\t");
              
-             for(int i = 0; i<wordNum; i++)
-            	 NewFile.write(wordList[i]+";\r\n\t");
+             for(int i = 0; i<wordNum; i++) {
+				NewFile.write(wordList[i]+";\r\n\t");
+			}
              
-             for(int i = 0; i<wordNum; i++)
-            	 for(int j = 0; j<wordNum; j++)
-            		 if(g.getEdge(i, j)!=0)
-            			 NewFile.write(wordList[i]+"->"+wordList[j]
-            					 +" [ label = \""+g.getEdge(i, j)+"\" ];\r\n\t");
+             for(int i = 0; i<wordNum; i++) {
+				for(int j = 0; j<wordNum; j++)
+					 if(g.getEdge(i, j)!=0)
+						 NewFile.write(wordList[i]+"->"+wordList[j]
+								 +" [ label = \""+g.getEdge(i, j)+"\" ];\r\n\t");
+			}
              NewFile.write("}");
              NewFile.close();
              
@@ -193,18 +201,20 @@ public class Hello1 {
            //  System.out.println(p.toString());
 		}
 		
-		public static String calcShortestPath(String word1, String word2)
+		public static String calcShortestPath(final String word1, final String word2)
 		{
-			if(!map.containsKey(word1) || !map.containsKey(word2))
+			if(!map.containsKey(word1) || !map.containsKey(word2)) {
 				return "Words not exist!\r\n";
+			}
 			
 			int v0 = (int)map.get(word1);
 			int v1 = (int)map.get(word2);
 			
 			int[] path = g.getDisPath(v0, v1);
 			
-			if(path==null)		//两个单词之间无路径
+			if(path==null) {
 				return "No path from "+"\""+word1+"\" to \""+word2+"\"!\r\n";
+			}
 			
 			String pathStr = "";
 			int i;
@@ -217,10 +227,11 @@ public class Hello1 {
 			
 		}
 		
-		public static String calcShortestPath(String word)
+		public static String calcShortestPath(final String word)
 		{
-			if(!map.containsKey(word))
+			if(!map.containsKey(word)) {
 				return "Words not exist!\r\n";
+			}
 			
 			int v = (int)map.get(word);
 		//	int v1 = (int)map.get(word2);
@@ -229,7 +240,10 @@ public class Hello1 {
 			//	if(g.getEdge(v, i)==0)	continue;
 				
 				int[] path = g.getDisPath(v, i);
-				if(path==null)	continue;	//两单词之间无路径
+				if(path==null)
+				 {
+					continue;	//两单词之间无路径
+				}
 				
 				pathStr = pathStr + wordList[v] + " to " + wordList[i] + ": ";
 				int j;
@@ -255,15 +269,17 @@ public class Hello1 {
 			walkStr = walkStr + wordList[index1] + " ";
 			do{
 				int[] outDegreeList = g.getOutDegree(index1);	//获得该顶点出度
-				if(outDegreeList.length == 0)				//如果
+				if(outDegreeList.length == 0) {
 					break;
+				}
 				
 				int index2 = outDegreeList[r.nextInt(outDegreeList.length)];
 						//从outDegreeList中随机选出一个元素
 				walkStr = walkStr + wordList[index2] + " ";
 				
-				if(g.IsVisited(index1, index2))
+				if(g.IsVisited(index1, index2)) {
 					break;
+				}
 				
 				g.setVisited(index1, index2, true);
 				
@@ -273,7 +289,7 @@ public class Hello1 {
 			return walkStr + "\r\n";
 		}
 		
-		public static void InitMain(String path) throws IOException
+		public static void InitMain(final String path) throws IOException
 		{
 			GetFile(path);
 			strList = strSplit(txtStr);
