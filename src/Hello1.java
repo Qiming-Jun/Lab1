@@ -13,8 +13,7 @@ public class Hello1 {
 		private static MyGraph g;
 		private static Map map;
 		
-		private static String[] strSplit(final String txtStr_this)
-		{
+		private static String[] strSplit(final String txtStr_this) {
 			StringBuffer tmpStr = new StringBuffer();
 			
 			for(int i=0; i<txtStr_this.length(); i++)
@@ -33,8 +32,7 @@ public class Hello1 {
 			return (new String(tmpStr)).split("     |    |   |  | ");
 		}
 		
-		private static boolean GetFile(final String fileName) throws IOException
-		{
+		private static boolean GetFile(final String fileName) throws IOException {
 			File rf0 = new File(fileName);		//判断文件是否存在
 			if(!rf0.exists()) {
 				return false;
