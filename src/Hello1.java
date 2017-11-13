@@ -89,18 +89,7 @@ public class Hello1 {
 					
 		}
 		
-/*		private static String[] getBridgeWords(String word1, String word2)
-		{
-			String[] bridgeWordList;
-			
-			if(!map.containsKey(word1) || !map.containsKey(word2)){
-				bridgeWordList = new String[0];
-			}
-			
-			
-				
-		}
-*/
+
 		public static String generateNewText(String inputText)
 		{
 			String[] inputTxtList = Hello1.strSplit(inputText);
@@ -119,7 +108,6 @@ public class Hello1 {
 					if(bridgeList.length != 0){
 						newString.append(wordList[bridgeList[0]]+" ");
 					}
-						
 				}
 			}
 			newString.append(inputTxtList[i]);
