@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
 	<name>Hello1</name>
-=======
-	<name>Lab4</name>
->>>>>>> 05e7426f92e0f01c6e96615941b0fe2fa2d37ff5
 	<comment></comment>
 	<projects>
 	</projects>
@@ -14,20 +10,8 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-<<<<<<< HEAD
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-=======
-		<buildCommand>
-			<name>net.sf.eclipsecs.core.CheckstyleBuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>net.sf.eclipsecs.core.CheckstyleNature</nature>
->>>>>>> 05e7426f92e0f01c6e96615941b0fe2fa2d37ff5
 	</natures>
 </projectDescription>
