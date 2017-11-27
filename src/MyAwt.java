@@ -198,8 +198,10 @@ public class MyAwt {
 			try {
 			//	String picPath = d1.getDirectory() + d1.getFile();
 				d1.setVisible(true);
-								
-				Main.showDirectedGraph(d1.getDirectory());
+				
+				
+			//	Main.showDirectedGraph(d1.getDirectory());
+				OutputPic output = new OutputPic(d1.getDirectory());
 		
 				String cmdStr = "cmd.exe /c dot "+d1.getDirectory()+"Graph.dot -T png -o "
 								+d1.getDirectory()+d1.getFile();
